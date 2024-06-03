@@ -141,6 +141,7 @@ sudo certbot --nginx -d muslimgrams.com -d www.muslimgrams.com
 Follow the prompts to configure SSL. Certbot will automatically adjust your Nginx configuration to use the new certificate.
 
 **To ensure database connectivity for your application, follow these steps to make sure MySQL is running and your application can connect to it:**
+
 Ensure MySQL is Running:
 
 Check the status of the MySQL service:
@@ -271,6 +272,7 @@ This will display the first 10 rows in the users table, helping you verify if th
 
 **Db configuration can be updated in common/config/main-local.php.**
 Update dbname, username and password.
+
 ```yaml
 <?php
               return [
@@ -300,9 +302,12 @@ Update dbname, username and password.
                   ],
               ];
 
-            ```
+```
+
+
 **Site Url and Envato purchase code**
 Site url can be update from common/config/params.php
+
  ```yaml
 <?php
 
@@ -325,11 +330,11 @@ Site url can be update from common/config/params.php
                   
                   
               ],
- ```
+```
 
-            **All done for appache srever, your software is ready to run.**
+**All done for appache srever, your software is ready to run.**
             
-**Admin Url : **youdomin.com/backend/web/index.php
+**Admin Url:** youdomin.com/backend/web/index.php
 
 **Login information :**
 
@@ -349,6 +354,7 @@ Nodejs v18.16.0
 
 must be installed on your server
 To confirm you have nodejs install, try to run command in your console :
+
 ```yaml
 node -v
 ```
@@ -356,6 +362,7 @@ You must see installed version of nodejs
 Output
 v18.16.0
 **It the nodejs is already not install you can install Nodejs with few steups.**
+
 Open the ssh terminal and run following commands:
 
 To get this version, you can use the apt package manager. Refresh your local package index first:
@@ -372,6 +379,7 @@ Output
 v18.16.0
 
 **Install the npm package with apt for installing other moduels like pm2:**
+
 ```yaml
 sudo apt install npm
 ```
@@ -522,6 +530,7 @@ https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.htm
 **STEP 2**
 
 Update AWS S3 Access key and secret access key
+
 **Use following url to create secret keys:**
 
 https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html#get-access-keys.
