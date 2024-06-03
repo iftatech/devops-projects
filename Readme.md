@@ -15,6 +15,7 @@ It comprises of Mobile Applications, Backend Penal. As This is complete social s
 5.basic knowledge about google cloud and firebase.
 
 **Server**
+
 Requires 
 
 - PHP v8.1 and MySQL.
