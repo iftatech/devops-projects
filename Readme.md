@@ -140,30 +140,28 @@ sudo certbot --nginx -d muslimgrams.com -d www.muslimgrams.com
 ```
 Follow the prompts to configure SSL. Certbot will automatically adjust your Nginx configuration to use the new certificate.
 
-**To ensure database connectivity for your application, follow these steps to make sure MySQL is running and your application can connect to it:
-**
+**To ensure database connectivity for your application, follow these steps to make sure MySQL is running and your application can connect to it:**
 Ensure MySQL is Running:
 
 Check the status of the MySQL service:
-sh
-Copy code
+
 ```yaml
 sudo systemctl status mysql
 ```
 If MySQL is not running, start the service:
-sh
+
 ```yaml
 sudo systemctl start mysql
 ```
 Enable MySQL to start on boot:
-sh
+
 ```yaml
 sudo systemctl enable mysql
 ```
-Secure MySQL Installation:
+**Secure MySQL Installation:**
 
 Run the MySQL secure installation script to set up root password, remove anonymous users, disallow remote root login, and remove test databases:
-sh
+
 ```yaml
 sudo mysql_secure_installation
 ```
@@ -253,7 +251,7 @@ sql
 ```yaml
 USE database_sayhi;
 ```
-**Step 4:****** Check for Tables
+**Step 4:** Check for Tables
 List the tables in the database to verify if the expected tables from the .sql file are present:
 
 sql
@@ -330,16 +328,26 @@ Site url can be update from common/config/params.php
  ```
 
             **All done for appache srever, your software is ready to run.**
+            
 **Admin Url : **youdomin.com/backend/web/index.php
+
 **Login information :**
+
 Username : admin
+
 Password : 123456
+
 **Nodejs Chat Socket Setup**
+
 We are using nodeJs socket programming for chat, Use following instruction for chat socket setup
+
 All nodeJs chat code will be in /chat forder
 
 **STEP 1**
-Nodejs v18.16.0 must be installed on your server
+
+Nodejs v18.16.0 
+
+must be installed on your server
 To confirm you have nodejs install, try to run command in your console :
 ```yaml
 node -v
@@ -351,20 +359,25 @@ v18.16.0
 Open the ssh terminal and run following commands:
 
 To get this version, you can use the apt package manager. Refresh your local package index first:
+
 ```yaml
 sudo apt update
 Then install Node.js:
 sudo apt install nodejs
 ```
 Check that the install was successful by querying node for its version number:
+
 node -v
 Output
 v18.16.0
+
 **Install the npm package with apt for installing other moduels like pm2:**
 ```yaml
 sudo apt install npm
 ```
+
 **You can update configuration filechat/config.json with given fields**
+
 ```yaml
 {
   "port":4000,  //server port
@@ -400,7 +413,9 @@ sudo apt install npm
   }
 
 ```
+
 **Start node server**
+
 After installing all dependencies and updated the configuration, you must start node server :
 Open a terminal and nvigate to the /chat folder that contain the file "index.js"
 Run following command to start server :
@@ -411,7 +426,7 @@ Run following command to start server :
         ```
 
         
-OR
+**OR**
 For running server all time you can install pm2 package More Detail
 Run following command to run server with forever:
 ```yaml
@@ -421,11 +436,15 @@ Run following command to run server with forever:
 ```
         
 Visit **https://yourdomain:4000** in your browser. You will see following screen if server is started successfully.
-**Mandatory setup
-Mail Configuration (SMTP)**
+
+**Mandatory setup**
+
+**Mail Configuration (SMTP)**
+
 Mail Configurations part admin can set his Mailer host, user name and his own encryption method and password for this SMTP Mail setup. This configuratin is used for sending mails.
 
 MAil configuration can be updated in common/config/main-local.php.
+
 ```yaml
 <?php
         return [
@@ -454,10 +473,14 @@ MAil configuration can be updated in common/config/main-local.php.
 
             ],
         ];
-     ```
+
+```
+
 **Local server storage setting**
+
 Storage system can update be update from common/config/params.php
 set storageSystem=1 for local storage
+
 ```yaml
 <?php
 
@@ -485,22 +508,28 @@ set storageSystem=1 for local storage
             'container' => '#######'
             
         ],
-      ```
+```
 **Amazone S3 Setup**
+
 We are using amazone s3 for storage files and images.
 
 **STEP 1**
+
 Create Bucket
 You can create bucket on s3 with public access to follow this URL:
 https://docs.aws.amazon.com/quickstarts/latest/s3backup/step-1-create-bucket.html .
 
 **STEP 2**
+
 Update AWS S3 Access key and secret access key
-Use following url to create secret keys:
+**Use following url to create secret keys:**
+
 https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html#get-access-keys.
+
 After generate the keys and secret, update it with bucket name on common/config/params.php
 set storageSystem=2 for AWS s3 storage, and update s3 information as below
- ```yaml
+
+```yaml
 <?php
     
             'adminEmail' => 'admin@yourdomain.com',
@@ -520,16 +549,24 @@ set storageSystem=2 for AWS s3 storage, and update s3 information as below
                 
                 
             ],
-     ```
+```
+
 **Project access URL**
+
 Admin Panel
 Admin Url : youdomin.com/backend/web/index.php
+
 **Login information :**
+
 Username : admin
 Password : 123456
+
 **Socket Url (socketApiBaseUrl)**
+
 https://yourdomain:4000
+
 **Rest API Endpoint Url (restApiBaseUrl)**
+
 youdomin.com/api/web/v1/
 
 API name will be added in the last of above api endpoint url. This will be done on the mobile side by programming. suppose if we need to call categories api, then mobile application is calling following url with adding api name "categories" like :
