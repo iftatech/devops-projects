@@ -31,7 +31,8 @@ Requires
 - Preferred Server: DigitalOcean, AWS
 
 
-To set up a PHP 8.1 FPM site with Nginx on Ubuntu for the domain http://muslimgrams.com/, with the index.php file located at 
+**To set up a PHP 8.1 FPM site with Nginx on Ubuntu for the domain http://muslimgrams.com/, with the index.php file located at **
+
 ```yaml
 /var/www/html/sayhi_v1.3_code/backend/web/index.php,
   ```
